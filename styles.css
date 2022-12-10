@@ -1,0 +1,248 @@
+@font-face {
+ font-family: 'Smythe';
+ src: url(/Smythe-Regular.ttf);
+}
+
+:root {
+ /* colours */
+
+ --menuListingColour: #000;
+ --menuIngredientColour: #8B8B8B;
+ --greenAccentColour: #16DB99;
+ --removeBtnColour: #BBBBBB;
+ --paymentDividerColour: #393333;
+ --orderCompleteSentenceColour: #065F46;
+ --orderCompleteBackgroundColour: #ECFDF5;
+
+/* font-sizes */
+
+--menuListingFontSize: 28px;
+--menuIngredientFontSize: 16px;
+--menuPriceFontSize: 20px;
+--removeBtnFontSize: 12px;
+--completeOderBtnFontSize: 16px;
+
+/* fonts */
+
+--btnFonts: 'Verdana'
+--mainFont: 'Smythe'
+}
+
+body {
+ border: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: 'Smythe';
+ max-height: 100vh;
+}
+
+header {
+ display: flex;
+ justify-content: center;
+}
+
+
+section {
+ display: flex;
+ height: 120px;
+ max-width: 500px;
+ margin:  0 auto;
+ align-items: center;
+ justify-content: space-between;
+ border-bottom: 1px solid #393333;
+}
+
+
+.menu-list-container {
+ justify-self: normal;
+ margin: 2px auto;
+ width: 300px;
+}
+
+.menu-name {
+font-family: "Smythe";
+font-size: 28px;
+font-weight: 400;
+/* line-height: 17px; */
+}
+
+.menu-ingredient {
+font-size: 16px;
+font-weight: 400;
+/* line-height: 24px; */
+color:#8B8B8B;
+}
+
+.menu-price {
+font-size: 20px;
+font-weight: 400;
+/* line-height: 24px; */
+}
+
+.menu-name, .menu-ingredient, .menu-price {
+ margin: 4px auto;
+}
+
+
+#order-panel {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.finalPayMenuBox {
+ width: 504px;
+ margin-top: 2px;
+ padding-top: 5px;
+ border-top: 2px solid #393333;
+ display: flex;
+ width: 100%;
+ max-width: 500px;
+ justify-content: space-between;
+ font-size: 28px;
+ align-items: center;
+}
+
+.totalPriceNumber {
+ font-size: 20px;
+}
+
+.complete-order-btn {
+ margin: 20px;
+ background: #16DB99;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 3px;
+height: 60px;
+width: 100%;
+max-width: 508px;
+outline: none;
+border:none;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 700;
+color: white;
+font-size: 16px;
+}
+
+.pay {
+ border:none;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-weight: 700;
+color: white;
+font-size: 16px;
+outline: none;
+width: 100%;
+margin: 20px;
+background: #16DB99;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 3px;
+height: 40px;
+}
+
+.pay:hover, 
+.pay:focus {
+ cursor: pointer;
+ box-shadow: 0px 2px 5px #393333 ;
+}
+
+.pay:active {
+ cursor: pointer;
+ box-shadow: inset 0px 0px 10px #393333 ;
+}
+
+.complete-order-btn:hover,  
+.complete-order-btn:focus {
+ box-shadow: 0px 2px 5px #393333 ;
+}
+
+.complete-order-btn:active {
+ box-shadow: inset 0px 0px 10px #393333 ;
+}
+
+.order-box {
+ display: flex;
+ justify-content: space-between;
+ width: 500px;
+height: 60px;
+ align-items: center;
+ /* padding: 0 5px; */
+}
+
+.payMenuName {
+ font-size: 28px;
+}
+
+.remove-btn {
+ cursor: pointer;
+ font-family: 'Verdana';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 12px;
+ color: #BBBBBB;
+}
+
+.remove-btn:hover {
+ font-size: 13px;
+ color: #393333;
+}
+
+.remove-btn:active {
+ font-size: 15px;
+}
+
+.hidden {
+ display: none;
+}
+
+
+.modal-container {
+ position: fixed;
+ width: 400px;
+ height: 65vh;
+ top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+ background-color: white;
+ border: 1px solid black inset;
+ filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
+}
+
+form {
+ display: flex;
+ flex-direction: column;
+ height: 80%;
+ align-items: center;
+ justify-content: space-evenly;
+ margin: 0 auto;
+}
+
+input {
+ height: 20px;
+ width: 340px;
+ padding: 10px;
+}
+
+.thankyou-order {
+ margin: 30px auto;
+ height: 100px;
+ width: 480px;
+ background: #ECFDF5;
+ font-size: 25px;
+ border: none;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: #065F46;
+}
+
+.modal-text {
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ display: none;
+}
+
+
+/* /^\d{0,12}$/ */

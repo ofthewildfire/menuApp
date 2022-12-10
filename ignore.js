@@ -3,11 +3,11 @@ import { menuArray } from "./data.js";
 const orderPanel = document.getElementById("order-panel");
 const completeOrderBtn = document.getElementById("complete-order");
 const modal = document.querySelector(".modal-container");
+const paybtn = document.querySelector(".pay");
 const form = document.getElementById("payment-form");
 const div = document.getElementById("completed");
 
-//Form addeventlistener - it listens for the click on the payment button and fires the function which displays the confirm message after a delay.
-form.addEventListener("submit", handlePaymetSubmit);
+form.addEventListener("submit", handlePaymetSubmit); //okay works now, problem was simple. you're a ninnywit. and you need to take a sec and think it out hun, not go in circles, think WHERE the action is firing from and what the aim is.
 
 function handlePaymetSubmit(event) {
  event.preventDefault();
@@ -25,9 +25,7 @@ function handlePaymetSubmit(event) {
      `;
  }, 500);
 
- setTimeout(() => {
-  location.reload(); //this is horrid, i currently have no better ideas, will learn more, and implement.
- }, 1000);
+ setTimeout(() => {});
 }
 
 //page addeventlistener
@@ -39,9 +37,9 @@ document.addEventListener("click", (e) => {
   totalPrice.push(menuArray[0].price);
   handleDisplay();
   pizzaArr.push(menuArray[0]);
-  totalPizzaPrice.push(menuArray[0].price);
+  totalPizzaPrice.push(menuArray[0].price); // just the pizza
   handleTotalPrice();
-  filterDuplicates();
+  filterDuplicates(); // test function
   pizzaPriceTally();
  }
  //second menu-item
@@ -54,7 +52,7 @@ document.addEventListener("click", (e) => {
   totalHamburgerPrice.push(menuArray[1].price);
   console.log(totalHamburgerPrice);
   handleTotalPrice();
-  filterDuplicates();
+  filterDuplicates(); // test function
  }
  //third menu-item
  if (e.target.dataset.add === "2") {
@@ -96,11 +94,12 @@ document.addEventListener("click", (e) => {
   totalBeerPrice.pop();
   beerArr.length - 1;
   beerPriceDecrement();
+  // totalPrice.pop(); //omg when you pop this and it leaves you the wrong values, its because you are taking the last of the array and if that is 14$ because you added hamburger 12 first and then added pizza 14, but then went and popped through this function hamburger you would be left with 12 not 14 because this is the order of the arr = [12, 14] and so its not the burger price removed but the LAST pushed one to the totalPrice array -- you ninnywit.
   beerPriceTally();
   filterDuplicates();
  }
 
- // these work, they suck, but they work and when the pain decides to leave me i shall return to fix this hot mess, but i am happy it does what it should regardless of how ugly it is.
+ // these work, they suck, but they work and when the pain decides to leave me i shall return to fix this hot mess, but i am happy it does what it should regardless of how ugly it is, dont be so harsh on yourself kay ???
 
  if (hamburgerArr.length === 0) {
   burgerRemove();
@@ -164,6 +163,8 @@ function hamburgerPriceDecrement() {
 }
 
 // a series of functions that return the individual menu items with the hidden class to remove them from the pane when there is no arrays
+
+//to be honest below i am not sure if adding the querySelector is wise in the condition. i only did it because it makes sense, right? i need it to be TRUE on the page, that means what i think it means, right? //thinking-face.
 
 function pizzaRemove() {
  if (pizzaArr.length === 0 && document.querySelector("[data-item='0']")) {

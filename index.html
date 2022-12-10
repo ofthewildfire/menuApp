@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <link rel="stylesheet" href="styles.css">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Menu App</title>
+</head>
+<body>
+
+
+   <section id="modal-container" class="modal-container hidden">
+      <form id="payment-form">
+         <h2 class="modal-text" >Enter your card details</h2> 
+    
+         <label for="name">
+            <input type="text" 
+            name="name" id="name" 
+            placeholder="Enter your name" required>
+         </label>
+        
+   
+         <label for="card"> 
+            <input type="number" 
+            name="card" id="card" 
+            placeholder="Enter your card number"
+            minlength="16" maxlength="16" required>
+      </label>
+        
+   
+         <label for="cvc">
+            <input type="text" 
+            name="cvc" id="cvc" 
+            placeholder="Enter CVC"
+            minlength="3" maxlength="3" required>
+         </label>
+
+         <span id="order-modal-total"></span>
+      
+         <button class="pay btn" id="pay" type="submit">Pay</button>
+   
+      </form>
+    </section>
+
+ <header>
+  <img src="/header.png" alt="">
+ </header>
+ 
+ <main id="menu-container">
+<!-- the menu is here -->
+ </main>
+
+
+ <div id="order-panel"> 
+    <h2 class="order-title hidden">Your order</h2>
+    <div class="orders" id="orders">
+<!-- orders go here -->
+     </div>
+
+     <div class="finalPayMenuBox hidden">
+      <span class="payMenuTotal">Total price:</span>
+      <span class="totalPriceNumber" id='total-order-price'> $0 </span>
+    </div>
+    <button class="complete-order-btn btn hidden" id="complete-order">Complete order</button>
+ </div>
+
+<div id="completed">
+
+</div>
+ <script src="/app.js" type="module"></script>
+</body>
+</html>
